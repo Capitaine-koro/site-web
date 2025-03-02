@@ -5,8 +5,8 @@ h1{
 }
 .rectangle {
   width: 1398px;  /* Largeur */
-  height: 80px; /* Hauteur */
-  background-color: rgb(254, 182, 0); /* Couleur de fond */
+  height: 150px; /* Hauteur */
+  background: linear-gradient(rgb(255, 230, 0)30px, rgb(255, 255, 255)); /* Couleur de fond */
   position: relative;
   top: -10px;
   left: -10px;
