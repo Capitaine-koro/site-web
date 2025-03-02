@@ -17,4 +17,14 @@ h1{
   position: relative;
   left: 10px;
 }
+.accueil {
+  position: relative;
+  top: -78px;
+  left: 120px;
+}
+.news{
+  position: relative;
+  top: -125px;
+  left: 220px;
+}
 
