@@ -13,18 +13,42 @@ h1{
 }
 .image {
   width: 80px;   /* Largeur de l'image */
-  height: 80px;  /* Hauteur de l'image */
+  height: auto;  /* Hauteur de l'image */
   position: relative;
   left: 10px;
+  transition: all 0.75s 0.25s;
+  transform: rotate(0);
 }
+
 .accueil {
   position: relative;
-  top: -78px;
-  left: 120px;
+  top: -83px;
+  left: 140px;
+  font-family: "Sigmar", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 .news{
   position: relative;
-  top: -125px;
-  left: 220px;
+  top: -142px;
+  left: 270px;
+  font-family: "Sigmar", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.contact{
+  position: relative;
+  top: -201.5px;
+  left: 380px;
+  font-family: "Sigmar", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+#checkbox {
+  display: none;
 }
 
+
+#checkbox:checked + .image {
+  transform: rotate(-180deg);
+}
