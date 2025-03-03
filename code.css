@@ -5,7 +5,7 @@ h1 {
 }
 
 .rectangle {
-  width: 1398px;
+  width: 1382px;
   /* Largeur */
   height: 100px;
   /* Hauteur */
@@ -101,7 +101,7 @@ input:checked ~ .rectangle img {
 }
 
 .rectangle2 {
-  width: 1500px;
+  width: 1382px;
   /* Largeur */
   height: 800px;
   /* Hauteur */
