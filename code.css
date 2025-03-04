@@ -96,7 +96,7 @@ img {
   font-family: "Sigmar", serif;
 }
 
-input:checked ~ .rectangle img {
+input:checked~.rectangle img {
   transform: rotate(360deg);
 }
 
@@ -115,6 +115,130 @@ input:checked ~ .rectangle img {
   z-index: 1;
 }
 
-input:checked ~ .rectangle2 {
+input:checked~.rectangle2 {
   transform: translateX(1500px);
+}
+
+.rektangle {
+  width: 250px;
+  /*largeur*/
+  height: 800px;
+  background-color: rgb(65, 65, 65);
+  position: relative;
+  top: -1100px;
+  left: -410px;
+  z-index: 1;
+  transition: transform 0.5s ease-in-out;
+}
+
+input:checked~.rektangle {
+  transform: translateX(400px);
+}
+
+.menu {
+  position: relative;
+  display: inline-block;
+  top: -1500px;
+}
+
+.menu-button {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 150px;
+  display: none;
+}
+
+.dropdown li {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background-color: #555;
+}
+
+/* Afficher le menu quand il est focus */
+.menu:focus-within .dropdown {
+  display: block;
+}
+
+.menu {
+  position: relative;
+  top: -1500px;
+  display: inline-block;
+  font-family: Arial, sans-serif;
+}
+
+/* Style du bouton */
+.menu-label {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+}
+
+/* Flèche */
+.menu-label::after {
+  content: "▼";
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* Cacher la case à cocher */
+.menu-checkbox {
+  display: none;
+}
+
+/* Style du sous-menu */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 150px;
+  display: none;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown li {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background-color: #555;
+}
+
+/* Quand la case est cochée, afficher le menu */
+.menu-checkbox:checked+.dropdown {
+  display: block;
+}
+
+/* Faire tourner la flèche vers le haut quand le menu est ouvert */
+.menu-checkbox:checked+.dropdown+.menu-label::after {
+  transform: rotate(180deg);
 }
