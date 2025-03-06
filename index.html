@@ -8,6 +8,28 @@
    <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
    <title>CAPITAINE KORO-ACCUEIL</title>
    <link class="logo" rel="icon" type="image/png" href="images/pull jône.png">
+   <script>
+      async function fetchLatestVideo() {
+         const apiKey = 'AIzaSyC4C0OoMNeh_Id_j0TyXFTI3h0poFf1HhE';  // Remplace par ta clé API YouTube
+         const channelId = 'UC_H1a4pSbLWleuSGqlIFx2Q';  // Remplace par l'ID de ta chaîne YouTube
+         const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&order=date&part=snippet&type=video&maxResults=1`;
+
+         try {
+            const response = await fetch(url);
+            const data = await response.json();
+            const videoId = data.items[0].id.videoId;
+            const thumbnailUrl = data.items[0].snippet.thumbnails.high.url;
+
+            // Met à jour le lien et la miniature
+            document.getElementById("videoLink").href = `https://www.youtube.com/watch?v=${videoId}`;
+            document.getElementById("videoThumbnail").src = thumbnailUrl;
+         } catch (error) {
+            console.error("Erreur lors de la récupération de la vidéo :", error);
+         }
+      }
+
+      fetchLatestVideo();
+   </script>
 </head>
 
 <body>
@@ -26,16 +48,10 @@
 
    <div class="rectangle2"></div>
    <div class="rektangle"></div>
-   <div class="menu">
-      <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-      <ul class="dropdown">
-         <li>Web Design</li>
-         <li>Développement</li>
-         <li>SEO</li>
-      </ul>
-      <label for="menu-toggle" class="menu-label">Services</label>
-   </div>
-   
+   <a id="videoLink" target="_blank">
+      <img class="miniature" id="videoThumbnail" width="560" alt="Miniature de la dernière vidéo">
+   </a>
 </body>
 <script src="https://kit.fontawesome.com/40d32a5b73.js" crossorigin="anonymous"></script>
+
 </html>
